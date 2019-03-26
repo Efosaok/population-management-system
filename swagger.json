@@ -1,0 +1,806 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "population-management",
+    "description": "TODO: Add Description",
+    "contact": {}
+  },
+  "host": "localhost:1298",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/location": {
+      "post": {
+        "description": "Create a location",
+        "summary": "localhost:1298/api/v1/location",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "LocationPost",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A1298~1api~1v1~1locationRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A1298~1api~1v1~1location"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "new location created",
+                "newLocation": {
+                  "_id": "5c99f9b6820dac47f3cb212d",
+                  "name": "Lagos",
+                  "malePopulation": 20,
+                  "femalePopulation": 20,
+                  "sublocations": [
+                    {
+                      "_id": "5c99f9b6820dac47f3cb212e",
+                      "name": "Anthony",
+                      "malePopulation": 20,
+                      "femalePopulation": 20,
+                      "totalPopulation": 40
+                    }
+                  ],
+                  "totalPopulation": 40,
+                  "__v": 0
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "301"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"12d-u9Pg4VCTLGMGDbpUnnaRccm6fUI\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 26 Mar 2019 10:06:46 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "Fetch all locations",
+        "summary": "localhost:1298/api/v1/location",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "LocationGet",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A1298~1api~1v1~1location1"
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "755"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"2f3-Rr93uIVK591hrQUgBZpWtp8UlkE\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 26 Mar 2019 10:20:56 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/location/{id}": {
+      "get": {
+        "description": "fetch a single location",
+        "summary": "localhost:1298/api/v1/location/5c99f9b6820dac47f3cb212d",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Location5c99f9b6820dac47f3cb212dGet",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A1298~1api~1v1~1location~15c99f9b6820dac47f3cb212d"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "location found",
+                "singleLocation": {
+                  "_id": "5c99f9b6820dac47f3cb212d",
+                  "name": "Lagos",
+                  "malePopulation": 20,
+                  "femalePopulation": 20,
+                  "sublocations": [
+                    {
+                      "_id": "5c99f9b6820dac47f3cb212e",
+                      "name": "Anthony",
+                      "malePopulation": 20,
+                      "femalePopulation": 20,
+                      "totalPopulation": 40
+                    }
+                  ],
+                  "totalPopulation": 40,
+                  "__v": 0
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "298"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"12a-5Kn/SxUxJYwGugAtq543kAyC88w\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 26 Mar 2019 10:10:45 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Update a location",
+        "summary": "localhost:1298/api/v1/location/5c99f9b6820dac47f3cb212d",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Location5c99f9b6820dac47f3cb212dPut",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A1298~1api~1v1~1location~15c99f9b6820dac47f3cb212dRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A1298~1api~1v1~1location~15c99f9b6820dac47f3cb212d1"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "location successfully updated",
+                "updatedLocation": {
+                  "_id": "5c99f9b6820dac47f3cb212d",
+                  "name": "New name",
+                  "malePopulation": 20,
+                  "femalePopulation": 20,
+                  "sublocations": [
+                    {
+                      "_id": "5c99f9b6820dac47f3cb212e",
+                      "name": "Anthony",
+                      "malePopulation": 20,
+                      "femalePopulation": 20,
+                      "totalPopulation": 40
+                    }
+                  ],
+                  "totalPopulation": 40,
+                  "__v": 0
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "317"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"13d-BgtgVNJOFyDpaWbvvomCw3fodSM\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 26 Mar 2019 10:17:28 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "delete a location",
+        "summary": "localhost:1298/api/v1/location/5c99f9b6820dac47f3cb212d",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Location5c99f9b6820dac47f3cb212dDelete",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A1298~1api~1v1~1location~15c99f9b6820dac47f3cb212d2"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "location successfully deleted"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "43"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"2b-vJf2vHeLzmMZCTt5yCvIQ1adzdw\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 26 Mar 2019 10:19:29 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "localhost:1298/api/v1/locationRequest": {
+      "title": "localhost:1298/api/v1/locationRequest",
+      "example": {
+        "name": "Lagos",
+        "malePopulation": 20,
+        "femalePopulation": 20,
+        "sublocations": [
+          {
+            "name": "Anthony",
+            "malePopulation": 20,
+            "femalePopulation": 20
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "malePopulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "femalePopulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sublocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sublocation"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "malePopulation",
+        "femalePopulation",
+        "sublocations"
+      ]
+    },
+    "Sublocation": {
+      "title": "Sublocation",
+      "type": "object",
+      "properties": {
+        "name": {
+          "example": "Anthony",
+          "type": "string"
+        },
+        "malePopulation": {
+          "example": 20,
+          "type": "integer",
+          "format": "int32"
+        },
+        "femalePopulation": {
+          "example": 20,
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "name",
+        "malePopulation",
+        "femalePopulation"
+      ]
+    },
+    "localhost:1298/api/v1/location": {
+      "title": "localhost:1298/api/v1/location",
+      "example": {
+        "message": "new location created",
+        "newLocation": {
+          "_id": "5c99f9b6820dac47f3cb212d",
+          "name": "Lagos",
+          "malePopulation": 20,
+          "femalePopulation": 20,
+          "sublocations": [
+            {
+              "_id": "5c99f9b6820dac47f3cb212e",
+              "name": "Anthony",
+              "malePopulation": 20,
+              "femalePopulation": 20,
+              "totalPopulation": 40
+            }
+          ],
+          "totalPopulation": 40,
+          "__v": 0
+        }
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "newLocation": {
+          "$ref": "#/definitions/NewLocation"
+        }
+      },
+      "required": [
+        "message",
+        "newLocation"
+      ]
+    },
+    "NewLocation": {
+      "title": "NewLocation",
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "malePopulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "femalePopulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sublocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sublocation1"
+          }
+        },
+        "totalPopulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "_id",
+        "name",
+        "malePopulation",
+        "femalePopulation",
+        "sublocations",
+        "totalPopulation",
+        "__v"
+      ]
+    },
+    "Sublocation1": {
+      "title": "Sublocation1",
+      "type": "object",
+      "properties": {
+        "_id": {
+          "example": "5c99f9b6820dac47f3cb212e",
+          "type": "string"
+        },
+        "name": {
+          "example": "Anthony",
+          "type": "string"
+        },
+        "malePopulation": {
+          "example": 20,
+          "type": "integer",
+          "format": "int32"
+        },
+        "femalePopulation": {
+          "example": 20,
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalPopulation": {
+          "example": 40,
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "_id",
+        "name",
+        "malePopulation",
+        "femalePopulation",
+        "totalPopulation"
+      ]
+    },
+    "localhost:1298/api/v1/location/5c99f9b6820dac47f3cb212d": {
+      "title": "localhost:1298/api/v1/location/5c99f9b6820dac47f3cb212d",
+      "example": {
+        "message": "location found",
+        "singleLocation": {
+          "_id": "5c99f9b6820dac47f3cb212d",
+          "name": "Lagos",
+          "malePopulation": 20,
+          "femalePopulation": 20,
+          "sublocations": [
+            {
+              "_id": "5c99f9b6820dac47f3cb212e",
+              "name": "Anthony",
+              "malePopulation": 20,
+              "femalePopulation": 20,
+              "totalPopulation": 40
+            }
+          ],
+          "totalPopulation": 40,
+          "__v": 0
+        }
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "singleLocation": {
+          "$ref": "#/definitions/SingleLocation"
+        }
+      },
+      "required": [
+        "message",
+        "singleLocation"
+      ]
+    },
+    "SingleLocation": {
+      "title": "SingleLocation",
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "malePopulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "femalePopulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sublocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sublocation1"
+          }
+        },
+        "totalPopulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "_id",
+        "name",
+        "malePopulation",
+        "femalePopulation",
+        "sublocations",
+        "totalPopulation",
+        "__v"
+      ]
+    },
+    "localhost:1298/api/v1/location/5c99f9b6820dac47f3cb212dRequest": {
+      "title": "localhost:1298/api/v1/location/5c99f9b6820dac47f3cb212dRequest",
+      "example": {
+        "name": "New name"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "localhost:1298/api/v1/location/5c99f9b6820dac47f3cb212d1": {
+      "title": "localhost:1298/api/v1/location/5c99f9b6820dac47f3cb212d1",
+      "example": {
+        "message": "location successfully updated",
+        "updatedLocation": {
+          "_id": "5c99f9b6820dac47f3cb212d",
+          "name": "New name",
+          "malePopulation": 20,
+          "femalePopulation": 20,
+          "sublocations": [
+            {
+              "_id": "5c99f9b6820dac47f3cb212e",
+              "name": "Anthony",
+              "malePopulation": 20,
+              "femalePopulation": 20,
+              "totalPopulation": 40
+            }
+          ],
+          "totalPopulation": 40,
+          "__v": 0
+        }
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "updatedLocation": {
+          "$ref": "#/definitions/UpdatedLocation"
+        }
+      },
+      "required": [
+        "message",
+        "updatedLocation"
+      ]
+    },
+    "UpdatedLocation": {
+      "title": "UpdatedLocation",
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "malePopulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "femalePopulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sublocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sublocation1"
+          }
+        },
+        "totalPopulation": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "_id",
+        "name",
+        "malePopulation",
+        "femalePopulation",
+        "sublocations",
+        "totalPopulation",
+        "__v"
+      ]
+    },
+    "localhost:1298/api/v1/location/5c99f9b6820dac47f3cb212d2": {
+      "title": "localhost:1298/api/v1/location/5c99f9b6820dac47f3cb212d2",
+      "example": {
+        "message": "location successfully deleted"
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ]
+    },
+    "localhost:1298/api/v1/location1": {
+      "title": "localhost:1298/api/v1/location1",
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "allLocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AllLocation"
+          }
+        },
+        "totalFemales": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalMales": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalPopulation": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "message",
+        "allLocations",
+        "totalFemales",
+        "totalMales",
+        "totalPopulation"
+      ]
+    },
+    "AllLocation": {
+      "title": "AllLocation",
+      "type": "object",
+      "properties": {
+        "_id": {
+          "example": "5c99f7f8820dac47f3cb212c",
+          "type": "string"
+        },
+        "name": {
+          "example": "Lagos",
+          "type": "string"
+        },
+        "malePopulation": {
+          "example": 20,
+          "type": "integer",
+          "format": "int32"
+        },
+        "femalePopulation": {
+          "example": 20,
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalPopulation": {
+          "example": 40,
+          "type": "integer",
+          "format": "int32"
+        },
+        "sublocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sublocation1"
+          }
+        },
+        "__v": {
+          "example": 0,
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "_id",
+        "name",
+        "malePopulation",
+        "femalePopulation",
+        "totalPopulation",
+        "sublocations",
+        "__v"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "population-management-system",
+  "version": "1.0.0",
+  "description": "simple population management system",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon --exec babel-node src/index",
+    "start": "npm run build && node dist/index",
+    "build": "babel ./src/ -d ./dist",
+    "test": "mocha ./tests/integration.test.js --require @babel/register --timeout 25000 --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Efosaok/population-management-system.git"
+  },
+  "author": "Efosa Okpugie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Efosaok/population-management-system/issues"
+  },
+  "homepage": "https://github.com/Efosaok/population-management-system#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "express": "^4.16.4",
+    "idempotent-babel-polyfill": "^7.0.0",
+    "mongoose": "^5.4.20",
+    "swagger-ui-express": "^4.0.2",
+    "validatorjs": "^3.15.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/register": "^7.4.0",
+    "dotenv": "^7.0.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10",
+    "supertest": "^4.0.2"
+  }
+}

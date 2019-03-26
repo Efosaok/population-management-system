@@ -1,0 +1,7 @@
+{
+  "sendContact": {
+    "name": "test name",
+    "malePopulation": 20,
+    "femalePopulation": 20
+  }
+}
