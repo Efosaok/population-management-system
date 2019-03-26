@@ -18,7 +18,7 @@ $ npm start // production version
 ```
 
 #### Running tests
-Integration tests exist for this project and can be found in the `<rootDir>/tests/integration.test.js` file`
+Integration tests exist for this project and can be found in the `<rootDir>/tests/integration.test.js` file
 
 ```
 $ npm run test
